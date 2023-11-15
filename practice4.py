@@ -24,7 +24,8 @@
 isCurry=True
 
 while isCurry:
-    count =0
+   #このループは別になくても
+    count =1
     print("カレーを召し上がれ")
     while True:
         print(f"{count}皿のカレーを食べました")
@@ -44,12 +45,19 @@ for num in range(10,0,-1):
     if num == 1:
         print("Lift off ！")
         break
+print("Lift off ！")
+
+"""
+ptint(f"(10 -count),",end="")
+"""
 
 # 4-4
 #(1)
 for num in range(10):
+   print()
    for num2 in range(10):
-      print(num * num2)
+      print(num * num2,end=" ")
+      
 #(2)
 
 #(3)

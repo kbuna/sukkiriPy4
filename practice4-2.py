@@ -14,8 +14,6 @@ for num in range(10):
 print()
 #(2) 奇数の段のみ
 for num in range(10):
-    if num == 0:
-        continue
     if num % 2 ==0:
         continue
     for num2 in range(10):
@@ -27,8 +25,6 @@ for num in range(10):
 print()
 #(3)　答えが50を越えたら計算中止
 for num in range(10):
-    if num == 0:
-        continue
     if num % 2 ==0:
         continue
     for num2 in range(10):
@@ -64,6 +60,17 @@ print(days)
 print(temp)
 print()
 
+
+#入力例
+temp =[]
+hour =8
+for h in range(10):
+    t = float(input(f"{hour}時の気温(℃)を入力"))
+    temp.append(t)
+    hour+1
+print(temp)
+
+
 #(2)
 temp =[]
 for i in days:
@@ -81,14 +88,27 @@ temp_new[5] = "N/A"
 print(temp_new)
 print()
 
+#例文
+"""
+temp_new
+for h in range(len(temp)):
+    if h == 5:
+        temp_new.append("N/A")
+    else:
+        temp_new.append(temp[h])
+"""
+
 #(4)
 total = 0
+error = 0
 for i in temp_new:
     if not isinstance (i,float):
+        error + 1
         continue
     total += i
-print(f"{total}")
+#print(f"{total/len(temp_new)-{error}:.2f}")
 print()
+#:.2f   fstringで使う記号　小数点以下２桁まで表示する
 
 # 4-6
 #(1)
@@ -112,6 +132,18 @@ while flag:
 print(numbers)
 print()
 
+
+#
+numbers =[1,1]
+while True:
+    next = numbers[-1] + numbers[-2]
+    # -1でリストの一番最後を指定する
+    # 桁数が２つなので、追加したあと増えていくのに対応できる。
+    if next > 1000:
+        break
+    numbers.append(next)
+print(numbers)
+
 #(2)
 ratios = []
 backnum2 = 0 
@@ -121,26 +153,38 @@ count = 0
 flag = True
 
 while flag:
-    if count==len(numbers):
+    if count == len(numbers):
         flag = False
         break
-    if count==0:
+    if count == 0:
         count += 1
         continue
 
     frontnum2 = numbers[count]
-    print(frontnum2)
     backnum2 = numbers[count-1]
-    print(backnum2)
     total = frontnum2 / backnum2
-   
     ratios.append(total)
+
     count += 1
 
 print(ratios)
 print()
+
+#例
+ratios=[]
+for num in range(len(numbers)):
+    if num+1 >= len(numbers):
+        break
+    ratios.append(numbers[num+1]/numbers[num])
+print(ratios)
+
 #(3)
 for i in ratios:
-    result = int(i*1000)
-    print(result/1000)
+    result = int(i*1000)/1000
+    print(result)
+"""
+for n in range(len(ratios)):
+    rarios[n] = int(ratios[n]*1000)/1000
+print(ratios)
+"""
 
