@@ -45,4 +45,15 @@ for num in range(10,0,-1):
         print("Lift off ！")
         break
 
+# 4-4
+#(1)
+for num in range(10):
+   for num2 in range(10):
+      print(num * num2)
+#(2)
 
+#(3)
+
+# 4-5
+
+# 4-6
